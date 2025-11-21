@@ -44,7 +44,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      # 3. Escaneo de vulnerabilidades en código fuente (Filesystem)
+      # 3. Escaneo de vulnerabilidades (Trivy FS)
       - name: Trivy FS Scan
         uses: aquasecurity/trivy-action@master
         with:
@@ -52,6 +52,12 @@ jobs:
           ignore-unfixed: true
           format: 'table'
           severity: 'CRITICAL,HIGH'
+
+      # --- NUEVO: Convertir nombre a minúsculas ---
+      # Esto coge 'ales-fava/DevOpsLab-MyWebApp' y lo convierte en 'ales-fava/devopslab-mywebapp'
+      - name: Convert image name to lowercase
+        run: |
+          echo "IMAGE_NAME=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
 
       # 4. Login en GitHub Container Registry
       - name: Log in to the Container registry
