@@ -23,8 +23,7 @@ FROM nginx:alpine as production-stage
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copiamos los archivos compilados desde la Etapa 1
-# NOTA: Ajusta 'dist/my-app' al nombre real de tu carpeta de salida en angular.json
-COPY --from=build-stage /app/dist/my-app/browser /usr/share/nginx/html
+COPY --from=build-stage /app/dist/MyWebApp/browser /usr/share/nginx/html
 
 # Exponemos el puerto 80
 EXPOSE 80
