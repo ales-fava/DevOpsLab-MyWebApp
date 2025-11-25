@@ -17,11 +17,11 @@ export class App {
   protected readonly http = inject(HttpClient);
   protected readonly taskService = inject(TaskService);  
 
-  ngOnInit() {
-    // Carga la configuración en tiempo de ejecución
-    this.http.get<any>('/assets/config.json').subscribe(config => {
-      this.showNewWelcome = config.showNewWelcome;
-    });
-  }
+  // ngOnInit() {
+  //   // Carga la configuración en tiempo de ejecución
+  //   this.http.get<any>('/assets/config.json').subscribe(config => {
+  //     this.showNewWelcome = config.showNewWelcome;
+  //   });
+  // }
   
 }
