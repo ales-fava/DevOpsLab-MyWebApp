@@ -19,6 +19,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "config.json",
+                "input": "src/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [
