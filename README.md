@@ -101,5 +101,3 @@ La fase de Integración Continua (CI) se automatiza mediante GitHub Actions al r
 3.  Realiza tus cambios y haz commit (`git commit -m 'feat: Descripción clara del cambio'`).
 4.  Asegúrate de que los cambios de configuración en `angular.json` son correctos si añades nuevos assets.
 5.  Abre un Pull Request hacia la rama `main`.
-
-> **Nota**: La aplicación no debe contener ninguna clave de infraestructura o credencial de seguridad.
